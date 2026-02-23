@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Virtual Pet Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<canvas id="confettiCanvas"></canvas>
+<body>
+
+<div id="selectionScreen">
+    <h1>Virtual Pet Game 🐾</h1>
+
+    <div class="pet-container">
+        <img src="images/dog.png" onclick="choosePet('dog', this)" class="pet">
+        <img src="images/cat.png" onclick="choosePet('cat', this)" class="pet">
+    </div>
+
+    <input type="text" id="petName" placeholder="Enter Pet Name">
+    <br><br>
+    <button onclick="startGame()">Start Game</button>
+
+    <p id="error"></p>
+</div>
+
+
+<div id="gameScreen" style="display:none;">
+
+    <h2 id="petTitle"></h2>
+
+    <img id="petImage" class="bounce" width="200">
+
+    <p>Hunger</p>
+    <div class="bar"><div id="hungerBar"></div></div>
+
+    <p>Happiness</p>
+    <div class="bar"><div id="happyBar"></div></div>
+
+    <p>Health</p>
+    <div class="bar"><div id="healthBar"></div></div>
+
+    <h3>Score: <span id="score">0</span></h3>
+    <h3>Score: <span id="score">0</span></h3>
+    <h3>Level: <span id="level">1</span></h3>
+    
+    <p>XP Progress</p>
+    <div class="bar"><div id="xpBar"></div></div>
+    
+    <h3 id="badge" style="color:gold;"></h3>
+
+    <button onclick="feedPet()">Feed 🍖</button>
+    <button onclick="playPet()">Play 🎾</button>
+    <button onclick="sleepPet()">Sleep 😴</button>
+    <button onclick="saveGame()">Save 💾</button>
+    <button onclick="restartGame()">Restart 🔄</button>
+
+    <h2 id="status"></h2>
+
+</div>
+
+<audio id="bgMusic" loop>
+    <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_c8c8a73467.mp3?filename=cute-level-up-2-189852.mp3">
+</audio>
+
+<script src="script.js"></script>
+</body>
+</html>
