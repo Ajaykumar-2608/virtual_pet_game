@@ -1,0 +1,183 @@
+/* ===== GLOBAL ===== */
+
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(to right, #74ebd5, #ACB6E5);
+    text-align: center;
+}
+.welcome-img {
+    width: 90%;
+    max-width: 280px;
+    height: auto;
+    margin: 20px auto;
+    display: block;
+    border-radius: 20px;
+}
+/* ===== MAIN CARD CONTAINER ===== */
+
+#welcomeScreen,
+#selectionScreen,
+#gameScreen {
+    background: white;
+    width: 360px;
+    margin: 40px auto;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0px 8px 20px rgba(0,0,0,0.2);
+}
+
+/* ===== ANIMATION ===== */
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== PET SELECTION ===== */
+
+.pet-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.pet {
+    width: 110px;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.pet:hover {
+    transform: scale(1.1);
+}
+
+input[type="text"] {
+    width: 90%;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+}
+#xpChart {
+    height: 250px !important;
+}
+/* ===== BUTTONS ===== */
+
+button {
+    margin: 6px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    background: linear-gradient(to right, #36b9cc, #4e73df);
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+button:hover {
+    transform: scale(1.05);
+}
+
+/* ===== PET IMAGE ===== */
+
+#petImage {
+    width: 150px;
+    margin: 10px 0;
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-8px); }
+    100% { transform: translateY(0px); }
+}
+
+/* ===== PROGRESS BARS ===== */
+
+.bar {
+    width: 100%;
+    height: 14px;
+    background: #eee;
+    border-radius: 20px;
+    margin-bottom: 10px;
+    overflow: hidden;
+}
+
+.bar div {
+    height: 100%;
+    background: linear-gradient(90deg, #1cc88a, #36b9cc);
+    border-radius: 20px;
+    transition: width 0.5s;
+}
+
+/* XP BAR SPECIAL COLOR */
+#xpBar {
+    background: linear-gradient(90deg, orange, red);
+}
+
+/* ===== TASKS ===== */
+
+.task {
+    text-align: left;
+    font-size: 14px;
+    margin: 6px 0;
+}
+
+.task input {
+    margin-right: 6px;
+}
+
+/* ===== STATUS ===== */
+
+#status {
+    margin-top: 10px;
+    font-weight: bold;
+    color: #e74a3b;
+}
+
+/* ===== CONFETTI CANVAS ===== */
+
+#confettiCanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+}
+
+/* ===== MOBILE OPTIMIZATION ===== */
+
+@media (max-width: 480px) {
+
+    #welcomeScreen,
+    #selectionScreen,
+    #gameScreen {
+        width: 95%;
+        padding: 15px;
+    }
+
+    #petImage {
+        width: 120px;
+    }
+
+    button {
+        font-size: 14px;
+    }
+}
+.save-popup {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #1cc88a;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 10px;
+    font-weight: bold;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    z-index: 9999;
+}

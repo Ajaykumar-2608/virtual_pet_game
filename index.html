@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtual Pet Game</title>
+    <link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#4e73df">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h3>📊 XP Growth Chart</h3>
+<canvas id="xpChart" width="300" height="150"></canvas>
+    <canvas id="confettiCanvas"></canvas>
+    <div id="welcomeScreen" class="screen">
+        <img src="welcome.jpg" class="welcome-img">
+        <br><br>
+        <button onclick="goToSelection()" class="main-btn">
+            Get Started
+        </button>
+    </div>
+    <div id="selectionScreen" style="display:none;">
+    <h1>Virtual Pet Game 🐾</h1>
+
+    <div class="pet-container">
+        <img src="images/dog.gif" onclick="choosePet('dog', this)" class="pet">
+        <img src="images/cat.gif" onclick="choosePet('cat', this)" class="pet">
+    </div>
+
+    <input type="text" id="petName" placeholder="Enter Pet Name">
+    <br><br>
+    <button onclick="startGame()">Start Game</button>
+
+    <p id="error"></p>
+</div>
+
+
+<div id="gameScreen" style="display:none;">
+    <h3>XP Growth Chart</h3>
+    <canvas id="xpChart"></canvas>
+    <h3>🎯 Focus Mode</h3>
+    <button onclick="startFocus()">Start 25 Min Focus</button>
+    <p id="focusTimer"></p>
+    <h2 id="petTitle"></h2>
+    <div id="saveMessage" class="save-popup"></div>
+
+    <img id="petImage" class="bounce" width="200">
+
+    <p>Hunger</p>
+    <div class="bar"><div id="hungerBar"></div></div>
+
+    <p>Happiness</p>
+    <div class="bar"><div id="happyBar"></div></div>
+
+    <p>Health</p>
+    <div class="bar"><div id="healthBar"></div></div>
+
+    <h3>Score: <span id="score">0</span></h3>
+    <h3>Score: <span id="score">0</span></h3>
+    <h3>Level: <span id="level">1</span></h3>
+    
+  
+    
+    <h3 id="badge" style="color:gold;"></h3>
+
+    <button onclick="feedPet()">Feed 🍖</button>
+    <button onclick="playPet()">Play 🎾</button>
+    <button onclick="sleepPet()">Sleep 😴</button>
+    <button onclick="saveGame()">Save 💾</button>
+    <button onclick="restartGame()">Restart 🔄</button>
+    <h3>🌟 Daily Healthy Habits</h3>
+
+    <div class="task">
+        <input type="checkbox" onclick="completeTask(this, 10)">
+        Drink 8 Glasses of Water 💧
+    </div>
+    
+    <div class="task">
+        <input type="checkbox" onclick="completeTask(this, 15)">
+        Exercise 20 Minutes 🏃
+    </div>
+    
+    <div class="task">
+        <input type="checkbox" onclick="completeTask(this, 20)">
+        Study 1 Hour 📚
+    </div>
+    
+    <div class="task">
+        <input type="checkbox" onclick="completeTask(this, 10)">
+        Sleep 7+ Hours 😴
+    </div>
+    <h3>🔥 Habit Streak</h3>
+<p>Current Streak: <span id="streak">0</span> Days</p>
+
+<h3>😊 Mood Tracker</h3>
+<select id="moodSelect" onchange="saveMood()">
+    <option value="">Select Mood</option>
+    <option value="Happy">😊 Happy</option>
+    <option value="Normal">😐 Normal</option>
+    <option value="Sad">😢 Sad</option>
+</select>
+
+<h3>📊 Weekly Progress</h3>
+<p>Habits Completed This Week: <span id="weeklyProgress">0</span></p>
+    <h2 id="status"></h2>
+
+</div>
+
+<audio id="bgMusic" loop>
+    <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_c8c8a73467.mp3?filename=cute-level-up-2-189852.mp3">
+</audio>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
